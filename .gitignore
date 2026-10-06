@@ -1,0 +1,14 @@
+# Visual Studio local state
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET build outputs
+bin/
+obj/
+TestResults/
+
+# Local development signing key (keep outside version control)
+/src/FormuRay.AddIn/FormuRay.AddIn_TemporaryKey.pfx

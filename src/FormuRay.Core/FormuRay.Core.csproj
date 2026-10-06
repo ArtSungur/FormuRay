@@ -1,0 +1,59 @@
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+    <ProjectGuid>{95440A3D-4324-4A16-84EA-30DE455C8E55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FormuRay.Core</RootNamespace>
+    <AssemblyName>FormuRay.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Compile Include="HardcodedInputRules.cs" />
+    <Compile Include="FormulaReference.cs" />
+    <Compile Include="FormulaReferenceParser.cs" />
+    <Compile Include="FormulaFunctions.cs" />
+    <Compile Include="FormulaTokenLocator.cs" />
+    <Compile Include="DefinedNameRules.cs" />
+    <Compile Include="CrossSheetAuditRules.cs" />
+    <Compile Include="CrossSheetInflowAnalyzer.cs" />
+    <Compile Include="NamedRangeInfo.cs" />
+    <Compile Include="ExplorerHotkeySettings.cs" />
+    <Compile Include="ExplorerModels.cs" />
+    <Compile Include="ExplorerValueFormatter.cs" />
+
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormulaClipboardSnapshot.cs" />
+    <Compile Include="FormulaExpression.cs" />
+    <Compile Include="ExplorerColumnWidths.cs" />
+    <Compile Include="HighlightStyle.cs" />
+    <Compile Include="UsedRangeCleanupPlan.cs" />
+    <Compile Include="ContentRegionAnalysis.cs" />
+    <Compile Include="AutoFormatStyle.cs" />
+    <Compile Include="AutoFormatClassifier.cs" />
+    <Compile Include="AutoFormatSettingsCodec.cs" />
+    <Compile Include="FormulaConsistencyAnalyzer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

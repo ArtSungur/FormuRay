@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+  <ribbon>
+    <tabs>
+      <tab id="tabFormuRay" label="FormuRay">
+        <group id="grpFormuRaySettings" label="Settings">
+          <button id="btnFormuRayKeySettings"
+                  label="Key Settings"
+                  image="settingicon"
+                  size="large"
+                  onAction="FormuRayKeySettings_OnAction" />
+        </group>
+        <group id="grpFormuRayFunctions" label="Functions">
+          <button id="btnNamedRangesManager"
+                  label="Named Ranges Manager"
+                  screentip="Named Ranges Manager"
+                  supertip="View and clean visible, hidden, workbook-level, and worksheet-level Defined Names in the active workbook."
+                  size="large"
+                  imageMso="NameManager"
+                  onAction="NamedRangesManager_OnAction" />
+          <toggleButton id="tglCrossSheetDependentsAudit"
+                        label="Cross Sheet Dependents Audit"
+                        size="large"
+                        image="dependents"
+                        onAction="CrossSheetDependentsAudit_OnAction" />
+          <toggleButton id="tglHardcodedDetector"
+                        label="Hardcoded Detector"
+                        size="large"
+                        image="HardCode"
+                        onAction="HardcodedDetector_OnAction" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>

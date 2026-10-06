@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="OnLoad">
+  <ribbon>
+    <tabs>
+      <tab id="tabFormuRayVsto" label="FormuRay">
+        <group id="grpFormuRayAudit" label="Audit">
+          <splitButton id="splitFormulaExplorer" size="large">
+            <button id="btnFormulaExplorer" label="Formula Audit Explorer"
+                    getImage="GetImage" onAction="OnPrecedents" />
+            <menu id="menuFormulaExplorer">
+              <button id="btnExplorerPrecedents" label="Precedents" onAction="OnPrecedents" />
+              <button id="btnExplorerDependents" label="Dependents" onAction="OnDependents" />
+            </menu>
+          </splitButton>
+          <toggleButton id="tglCrossSheetInflowVsto" label="Cross Sheet Inflow" size="large"
+                        getImage="GetImage" onAction="OnCrossSheetInflow"
+                        getPressed="GetCrossSheetInflowPressed" />
+          <toggleButton id="tglCrossSheetOutflowVsto" label="Cross Sheet Outflow" size="large"
+                        getImage="GetImage" onAction="OnCrossSheetOutflow"
+                        getPressed="GetCrossSheetOutflowPressed" />
+          <toggleButton id="tglHardcodedDetectorVsto"
+                        label="HardCode Detector"
+                        size="large"
+                        imageMso="ConditionalFormattingHighlightCellsMenu"
+                        onAction="OnHardcodedDetector"
+                        getPressed="GetHardcodedDetectorPressed" />
+          <toggleButton id="tglFormulaConsistencyVsto" label="Formula Consistency" size="large"
+                        getImage="GetImage" onAction="OnFormulaConsistency"
+                        getPressed="GetFormulaConsistencyPressed" />
+        </group>
+        <group id="grpFormuRayTools" label="Tools">
+          <button id="btnPasteFormulasVsto" label="Paste Formulas" size="large"
+                  getImage="GetImage" onAction="OnPasteFormulas"
+                  screentip="Paste Formulas"
+                  supertip="Copy cells with Ctrl+C, then paste their contents with formulas unchanged. Default shortcut: Shift + Alt + V. Change it in Key Settings." />
+          <button id="btnNamedRangesVsto" label="Named Ranges Manager" size="large"
+                  imageMso="NameManager" onAction="OnNamedRanges" />
+          <button id="btnAutoFormatterVsto" label="AutoFormatter" size="large"
+                  imageMso="FormatPainter" onAction="OnAutoFormatter" />
+          <button id="btnUsedRangeOptimizerVsto" label="Used Range Optimizer" size="large"
+                  imageMso="ClearAll" onAction="OnUsedRangeOptimizer" />
+          <button id="btnKeySettingsVsto" label="Settings" size="large"
+                  imageMso="ControlsGallery" onAction="OnKeySettings" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>

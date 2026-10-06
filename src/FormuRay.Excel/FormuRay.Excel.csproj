@@ -1,0 +1,90 @@
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+    <ProjectGuid>{F882B596-FB29-481D-B70A-03B9F12F3129}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FormuRay.Excel</RootNamespace>
+    <AssemblyName>FormuRay.Excel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Compile Include="ComReference.cs" />
+    <Compile Include="CellFillState.cs" />
+    <Compile Include="HighlightFill.cs" />
+    <Compile Include="UsedRangeOptimizerService.cs" />
+    <Compile Include="AutoFormatterService.cs" />
+    <Compile Include="FormulaConsistencyService.cs" />
+    <Compile Include="UI\AutoFormatterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UsedRangeOptimizerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HardcodedDetectorService.cs" />
+    <Compile Include="Audit\ExcelAuditContext.cs" />
+    <Compile Include="Audit\AuditFillSession.cs" />
+    <Compile Include="Audit\ExcelFormulaReader.cs" />
+    <Compile Include="Audit\CrossSheetAuditService.cs" />
+    <Compile Include="Audit\CrossSheetInflowService.cs" />
+    <Compile Include="Names\ExcelNameReader.cs" />
+    <Compile Include="Names\NamedRangesService.cs" />
+    <Compile Include="UI\NamedRangesManagerController.cs" />
+    <Compile Include="UI\NamedRangesManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HotkeySettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audit\DependentTraceReader.cs" />
+    <Compile Include="Audit\FormulaExplorerService.cs" />
+    <Compile Include="UI\FormulaExplorerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormulaExplorerController.cs" />
+    <Compile Include="UI\ExplorerWindowPlacement.cs" />
+    <Compile Include="UI\FormulaExplorerPresentation.cs" />
+    <Compile Include="UI\FormulaLocalDisplay.cs" />
+    <ProjectReference Include="..\FormuRay.Core\FormuRay.Core.csproj">
+      <Project>{95440A3D-4324-4A16-84EA-30DE455C8E55}</Project>
+      <Name>FormuRay.Core</Name>
+    </ProjectReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PasteFormulasService.cs" />
+    <Compile Include="CellAppearanceSnapshot.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
